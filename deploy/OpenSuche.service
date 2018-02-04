@@ -1,0 +1,12 @@
+[Unit]
+Description = OpenSuche service
+After network.target = OpenSuche.service
+
+[Service]
+Type = forking
+ExecStart = /usr/local/bin/OpenSucheService.sh start
+ExecStop = /usr/local/bin/OpenSucheService.sh stop
+ExecReload = /usr/local/bin/OpenSucheService.sh reload
+
+[Install]
+WantedBy=multi-user.target
